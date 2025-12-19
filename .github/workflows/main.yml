@@ -41,7 +41,7 @@ jobs:
         if: always()
         with:
           files: 'reports/*.xml'
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v6
         with:
           name: build
           path: public
@@ -55,7 +55,7 @@ jobs:
     needs: [ build ]
     if: inputs.deploy == true
     steps:
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v6
         with:
           name: build
           path: public
