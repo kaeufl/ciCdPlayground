@@ -22,7 +22,7 @@ pipeline {
                 sh 'yarn test'
             }
 
-            ost {
+            post {
               always {
                   junit 'reports/jest-junit.xml'
               }
